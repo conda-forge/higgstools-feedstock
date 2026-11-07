@@ -22,6 +22,10 @@ source:
     - support-fmt-10-and-newer.patch
     # magic_enum >= 0.9 moved ostream_operators to magic_enum_iostream.hpp
     - support-magic_enum-0.9-in-tests.patch
+    # The "mass measurement" test compares a chi^2 difference that should be
+    # exactly 0 using only a relative tolerance, so any round-off fails it
+    # (4.4e-14 on linux-aarch64). Add a small absolute margin.
+    - allow-round-off-in-zero-chisq-difference-test.patch
     # Option to link the Python extension module against the installed
     # libHiggsTools instead of compiling the library sources into it again.
     - link-python-module-against-installed-libHiggsTools.patch
@@ -33,7 +37,7 @@ source:
     - set-project-version-to-1.1.3.patch
 
 build:
-  number: 1
+  number: 2
   skip:
     - win
 

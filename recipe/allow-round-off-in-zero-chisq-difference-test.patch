@@ -1,0 +1,13 @@
+diff --git a/tests/signals/RateMeasurement.cpp b/tests/signals/RateMeasurement.cpp
+index 733360e..28efed9 100644
+--- a/tests/signals/RateMeasurement.cpp
++++ b/tests/signals/RateMeasurement.cpp
+@@ -645,7 +645,7 @@ TEST_CASE("mass measurement") {
+                           Approx(chisq).epsilon(5e-2));
+                     CHECK(meas.chisq(pred, {}, options) -
+                               meas.chisq(predEff, {}, options) ==
+-                          Approx(sepChisq).epsilon(5e-2));
++                          Approx(sepChisq).epsilon(5e-2).margin(1e-10));
+                 }
+             }
+         }
