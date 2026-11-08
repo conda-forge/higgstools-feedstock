@@ -6,7 +6,7 @@ diff --git a/CMakeLists.txt b/CMakeLists.txt
  project(
    HiggsTools
 -  VERSION 1.1.3
-+  VERSION 1.1.4
++  VERSION 1.2
    LANGUAGES CXX)
  
  # -------------------------------- setup cmake --------------------------------
